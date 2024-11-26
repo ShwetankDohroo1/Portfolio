@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Faculty+Glyphic&family=Funnel+Display:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Faculty+Glyphic&family=Funnel+Display:wght@300..800&family=Jaro:opsz@6..72&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +9,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
     color-scheme: dark;
 }
@@ -20,15 +20,19 @@
 
 body {
     cursor: none;
+    font-family: "Funnel Display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 .myname{
     text-shadow: 10px 0px 30px rgba(0, 0, 0, 0.5);
 }
 
 .cursor-dot {
-    width: 10px;
-    height: 10px;
-    background-color: white;
+    width: 30px;
+    height: 30px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.3);
     position: fixed;
     top: 0;
     left: 0;
@@ -145,6 +149,7 @@ body {
 .navbar {
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.3);
+    font-family: "Jaro", sans-serif;
 }
 .slider{
     width: 100%;
@@ -153,10 +158,10 @@ body {
 }
 .item{
     position: absolute;
-    background-color: #009d9f;
+    background-color: #90aecf;
     border-radius: 10px;
     transition:  0.5s;
-    left: calc(25% - 110px);
+    /* left: calc(15%); */
 }
 #next{
     position: absolute;
@@ -167,7 +172,7 @@ body {
     left: 50px;
 }
 #prev, #next{
-    color: #fff;
+    color: white;
     background: none;
     border: none;
     font-size: xxx-large;

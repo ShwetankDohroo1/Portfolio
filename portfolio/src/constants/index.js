@@ -6,6 +6,49 @@ import inves from  '../imgs/inves.png';
 import tic from  '../imgs/tic.png';
 import count from  '../imgs/count.png';
 import ngo from '../imgs/ngo.png';
+import ReactCanvas from '../components/Canvas/react.jsx';
+import NodeCanvas from '../components/Canvas/nodejs.jsx';
+import JSCanvas from '../components/Canvas/js.jsx';
+import BootCanvas from '../components/Canvas/bootstrap.jsx';
+import FramerCanvas from '../components/Canvas/framer.jsx';
+import MongoCanvas from '../components/Canvas/mongo.jsx';
+export const techies = [
+  {
+    title: "React.js",
+    canvasComponent : ReactCanvas,
+    about:  [
+      "Redux : State container for JavaScript apps.",
+      "React Query : Data fetching and caching.",
+      "React Router : Library for handling navigation and routing.",
+      "Tailwind CSS : Inline CSS",
+      "Axios : For HTTP requests.",],
+  },
+  {
+    title: "Java Script",
+    canvasComponent : JSCanvas,
+    about: [],
+  },
+  {
+    title: "Node.js",
+    canvasComponent : NodeCanvas,
+    about: [],
+  },
+  {
+    title: "BootStrap",
+    canvasComponent : BootCanvas,
+    about: [],
+  },
+  {
+    title: "Framer Motion",
+    canvasComponent : FramerCanvas,
+    about: [],
+  },
+  {
+    title: "MongoDB",
+    canvasComponent : MongoCanvas,
+    about: [],
+  },
+];
 export const navLinks = [
   {
     id: "about",

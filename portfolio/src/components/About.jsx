@@ -9,9 +9,9 @@ import { fadeIn, textVariant } from "../utils/motion";
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div variants={fadeIn("right", "spring", index * 0.5, 0.75)}className='w-full p-[1px] rounded-[20px] shadow-card'>
-      <div options={{ max: 45, scale: 1, speed: 450,}} className="bg-[#2dc196] rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col shadow-lg">
+      <div options={{ max: 45, scale: 1, speed: 450,}} className="bg-[#d5f4ff] rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col shadow-lg">
         <img src={icon} alt='web-development' className='w-18 h-18 object-contain'/>
-        <h3 className='text-[#f9f871] text-[20px] font-bold text-center'>
+        <h3 className='text-[#3a434c] text-[20px] font-bold text-center'>
           {title}
         </h3>
       </div>
@@ -23,13 +23,13 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className="text-[#2dc196] text-3xl font-semibold">Introduction</p>
+        <p className="text-[#8ed64d] text-3xl font-semibold">Introduction</p>
         <h2 className={ styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-[#2dc196] text-xl font-semibold'
+        className='mt-4 text-[#8ed64d] text-2xl font-semibold'
       >
         I'm a skilled software developer with experience in TypeScript and
         JavaScript, and expertise in frameworks like React, Node.js, and
