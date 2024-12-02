@@ -59,16 +59,16 @@ export const navLinks = [
     title: "Work",
   },
   {
-    id: "contact",
-    title: "Contact",
+    id: "tech",
+    title: "Techs",
   },
   {
     id: "resume",
     title: "Resume",
   },
   {
-    id: "tech",
-    title: "Techs",
+    id: "contact",
+    title: "Contact",
   },
 ];
 
@@ -160,6 +160,7 @@ const projects = [
       "PhilanthroHub is designed to have a global reach, enabling users to support charitable organizations across various regions and sectors.",
     ],
     deployment:"Still working on it",
+    bg_color:"#afb09b",
   },
   {
     title: "Web-Game",
@@ -174,6 +175,7 @@ const projects = [
       "Tech I used here are React.js, Node.js, CSS and Tailwing, GSAP for animations.",
     ],
     deployment:"https://tic-tac-toe-usingreactjs.netlify.app/",
+    bg_color:"#E7E8D1",
   },
   {
     title: "Investment Calculator",
@@ -188,6 +190,7 @@ const projects = [
       "Tech I used here are React.js, CSS and Tailwing, GSAP for animations.",
     ],
     deployment:"https://investment-calculator-usingreactjs.netlify.app/",
+    bg_color:"#b8c8b4",
   },
   {
     title: "Catch-Count-Down",
@@ -202,6 +205,7 @@ const projects = [
       "I have used React.js Hooks like UseState, UseRef for implementing the working of timer and calculations",
     ],
     deployment:"https://catch-count-down.netlify.app/",
+    bg_color:"#9cb498",
   },
   {
     title: "Avengers Headquater",
@@ -215,6 +219,7 @@ const projects = [
       "Tech I used here are HTML, CSS and Tailwing",
     ],
     deployment:"Haven't Deployed",
+    bg_color:"#f2fedc",
   },
 ];
 

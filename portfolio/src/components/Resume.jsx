@@ -48,8 +48,8 @@ const Resume = () => {
     return (
         <>
             <motion.div variants={textVariant()}>
-                <h2 className={styles.sectionHeadText}>My Resume.</h2>
-                <p className="text-[#2dc196] text-3xl font-semibold">Click below to download my resume.</p>
+                <h2 className={`${styles.sectionHeadText} HeadingText`}>My Resume.</h2>
+                <p className="text-[#2dc196] text-3xl font-semibold Heading">Click below to download my resume.</p>
             </motion.div>
             <div ref={resumeRef} onClick={handleModelClick} className="resumediv h-full w-full">
                 <ShwetankResumeCanvas />

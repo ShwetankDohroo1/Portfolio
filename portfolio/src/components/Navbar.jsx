@@ -9,19 +9,29 @@ import close from '../imgs/close.png';
 export function Navbar() {
     const [active, setActive] = useState("");
     const [toggle, setToggle] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 0);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
-        <nav className={`${styles.paddingX} w-full flex justify-center items-center py-5 fixed top-0 z-20`}>
-            <div className="navbar w-6/12 flex justify-between items-center max-w-7xl p-2 rounded-2xl">
+        <nav className={`navmain ${styles.paddingX} w-full flex justify-center items-center py-5 fixed top-0 z-20`}>
+            <div className={`w-6/12 flex items-center max-w-7xl p-2 rounded-2xl ${scrolled ? "navbar" : "bg-transparent boreder-none "} duration-300`}>
                 <Link to="/" className="flex items-center gap-2" onClick={() => { setActive(""); window.scrollTo(0, 0); }}>
                     <img src={S} alt="" className="w-9 h-9 object-contain" />
                 </Link>
-                <ul className="list-none hidden sm:flex flex-row gap-10">
+                <ul className="list-none w-full hidden sm:flex flex-row gap-10 justify-center">
                     {navLinks.map((link) => (
-                        <li key={link.id} className={`${active === link.title ? "text-black" : "text-[#d6f4ff]"} hover:text-white text-2xl font-medium cursor-pointer duration-300`}
-                            onClick={() => setActive(link.title)}>
-                            <a href={`#${link.id}`}>{link.title}</a>
-                        </li>
+                        <li key={link.id} className={`hoverable text-2xl ${ active === link.title ? "text-red-400" : "" } ${scrolled ? "text-black" : ""}`} onClick={() => setActive(link.title)}>
+                        <a href={`#${link.id}`}>{link.title}</a>
+                      </li>
                     ))}
                 </ul>
                 <div className="sm:hidden flex flex-1 justify-end items-center">

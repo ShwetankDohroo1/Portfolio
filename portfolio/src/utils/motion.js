@@ -1,3 +1,40 @@
+import { useEffect } from "react";
+import { useAnimation } from "framer-motion";
+
+/**
+ * Custom hook to handle scroll-triggered animations
+ * @param {Object} animationConfig - Motion animation configuration for `hidden` and `show` states.
+ * @param {number} threshold - Threshold for the IntersectionObserver (default is 0.5).
+ * @returns {Object} - Animation controls to attach to a motion component.
+ */
+export const useScrollAnimation = (animationConfig, threshold = 0.5) => {
+    const controls = useAnimation();
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        controls.start(animationConfig.show);
+                    } else {
+                        controls.start(animationConfig.hidden);
+                    }
+                });
+            },
+            { threshold }
+        );
+
+        const element = document.querySelector(`[data-animate-id="${animationConfig.id}"]`);
+        if (element) observer.observe(element);
+
+        return () => {
+            if (element) observer.unobserve(element);
+        };
+    }, [controls, animationConfig, threshold]);
+
+    return controls;
+};
+
 export const textVariant = (delay) => {
     return {
         hidden: {
