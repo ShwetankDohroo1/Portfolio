@@ -267,7 +267,6 @@ body {
 
 .project-item {
     position: relative;
-    display: inline-block;
     width: 100vw;
     height: 50%;
     padding: 2rem;
@@ -299,7 +298,7 @@ body {
     font-weight: lighter;
     text-align: center;
 }
-/* .card-0{
+.card-0{
     left: 75%;
     top: -10%;
 }
@@ -314,15 +313,15 @@ body {
     rotate: -30deg;
 }
 .card-2{
-    left: 140%;
+    left: 10%;
     top: -10%;
 }
 .card-2 img{
     rotate: 60deg;
 }
 .card-3{
-    left: 90%;
-    top: 40%;
+    left: 60%;
+    top: 80%;
 }
 .card-3 img{
     rotate: 30deg;
@@ -333,7 +332,7 @@ body {
 }
 .card-4 img{
     rotate: 30deg;
-} */
+}
 .photo.tech-photo {
     position: absolute;
     top: 50%;
@@ -348,9 +347,59 @@ body {
 }
 .projects {
     will-change: transform;
+}.strip {
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.tech-photo {
-    transform-origin: center;
+
+.top-strip {
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.bottom-strip {
+  bottom: 0;
+  transform: translateY(50%);
+}
+
+.text-strip {
+  display: inline-block;
+  animation: scroll-left 10s linear infinite;
+}
+.github, .linkedin, .email, .leetcode, .gfg, .codeforce {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.github::before, .linkedin::before, .email::before, .leetcode::before, .gfg::before, .codeforce::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: #000000;
+    border-radius: 200% 200% 0 0;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.github:hover::before, .linkedin:hover::before, .email:hover::before, .leetcode:hover::before, .gfg:hover::before, .codeforce:hover::before {
+    transform: translateY(0);
+    border-radius: 0;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
   
 @keyframes mulShdSpin {
@@ -437,6 +486,20 @@ body {
             -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
     }
 }
+@media (max-width: 1440px) {
+    /* Styles for large desktop screens */
+    .gsapanimation{
+        width: 118.5vw !important;
+    }
+    .project-item{
+        width: 140vw;
+    }
+}
+
+@media (max-width: 1200px) {
+    /* Styles for smaller desktop screens */
+}
+
 @media (max-width: 768px) {
     .photos {
       width: 80vw;
@@ -446,4 +509,7 @@ body {
     .photo.tech-photo {
       border-radius: 0.5rem;
     }
-  }
+}
+@media (max-width: 480px) {
+    /* Styles for small mobile screens */
+}

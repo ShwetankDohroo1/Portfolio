@@ -39,6 +39,7 @@ const Tech = () => {
       start: "top top",
       end: "bottom bottom",
       pin: ".right",
+      ease: "power2.inOut",
       animation: animation,
       scrub: true,
     });
@@ -65,7 +66,7 @@ const Tech = () => {
                   <h3 className="headline bg-[#2d4e86] rounded-md h-auto w-full p-5">
                     {tech.title}
                   </h3>
-                  <p className="text mt-3 p-5 bg-[#2d4e86] rounded-md h-auto w-full">
+                  <p className="text mt-3 p-5 bg-[#00a0b5] rounded-md h-auto w-full">
                     {tech.about}
                   </p>
                 </div>
@@ -75,7 +76,7 @@ const Tech = () => {
           <div className="right w-1/2 h-screen flex flex-col justify-center items-center">
             <div className="photos relative w-[30vw] h-[30vw]">
               {techies.map((tech, i) => (
-                <div key={i} className={`photo tech-photo absolute w-full h-full rounded-md ${ i === 0 ? "opacity-100 scale-100" : "opacity-0 scale-50" } bg-black`}>
+                <div key={i} className={`photo tech-photo absolute w-full h-full rounded-md ${ i === 0 ? "opacity-100 scale-100" : "opacity-0 scale-50" } bg-[#0078ac]`}>
                   <TechCard tech={tech} index={i} />
                 </div>
               ))}
