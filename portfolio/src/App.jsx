@@ -6,7 +6,6 @@ import Projects from './components/Projects.jsx';
 import { Navbar } from './components/Navbar.jsx';
 import Tech from './components/Tech.jsx';
 import { Setup } from './components/Setup.jsx';
-import Resume from './components/Resume.jsx';
 import Links from './components/Links.jsx';
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
@@ -45,10 +44,6 @@ function App() {
             <Projects />
           <hr className="bg-[#FEE715] h-0.5 border-0 rounded-3xl w-11/12 mx-auto my-8" />
             <Tech />
-          <hr className="bg-[#FEE715] h-0.5 border-0 rounded-3xl w-11/12 mx-auto my-8" />
-          <Parallax speed={-10}>
-            <Resume />
-          </Parallax>
           <hr className="bg-[#FEE715] h-0.5 border-0 rounded-3xl w-11/12 mx-auto my-8" />
           <Parallax speed={-10}>
             <Links />
