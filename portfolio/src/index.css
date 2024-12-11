@@ -3,7 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Faculty+Glyphic&family=Funnel+Display:wght@300..800&family=Jaro:opsz@6..72&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Faculty+Glyphic&family=Funnel+Display:wght@300..800&family=Jaro:opsz@6..72&family=Lacquer&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Faculty+Glyphic&family=Funnel+Display:wght@300..800&family=Jaro:opsz@6..72&family=Lacquer&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Concert+One&family=Faculty+Glyphic&family=Funnel+Display:wght@300..800&family=Jaro:opsz@6..72&family=Lacquer&family=Pacifico&family=Spicy+Rice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Concert+One&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Faculty+Glyphic&family=Funnel+Display:wght@300..800&family=Jaro:opsz@6..72&family=Lacquer&family=Pacifico&family=Spicy+Rice&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Concert+One&family=Faculty+Glyphic&family=Funnel+Display:wght@300..800&family=Jaro:opsz@6..72&family=Lacquer&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Concert+One&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Faculty+Glyphic&family=Funnel+Display:wght@300..800&family=Jaro:opsz@6..72&family=Lacquer&family=Pacifico&family=Spicy+Rice&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,6 +17,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     color-scheme: dark;
+    cursor: none;
 }
 
 .Heading {
@@ -28,6 +32,7 @@
 .HeadingText {
     font-family: "Jaro", serif;
     font-weight: 500;
+    color: #fdb555;
 }
 
 .color-picker-container {
@@ -244,35 +249,41 @@ body {
     background: #15151e;
     overflow-x: hidden;
 }
-
 .gsapanimation {
     position: relative;
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
     overflow-y: hidden;
-    left: -380px; 
+    left: -380px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
 }
 
 .projects {
     position: absolute;
     display: flex;
     width: max-content;
-    height: 100%;
-    top: 30%;
     left: 0;
     margin: 0;
     padding: 0;
 }
 
+.prj h2 {
+    text-shadow: 10px 10px 30px black;
+}
+
 .project-item {
-    position: relative;
     width: 100vw;
-    height: 50%;
     padding: 2rem;
     text-align: center;
 }
 
+.projectinfo {
+    backdrop-filter: blur(10px);
+    background-color: rgba(44, 43, 43, 0.3);
+    font-family: "DM Sans", sans-serif;
+}
 
 .project-item h2,
 .project-item h3 {
@@ -284,7 +295,6 @@ body {
 }
 
 .outro {
-    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -294,45 +304,43 @@ body {
 }
 
 .outro h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: lighter;
     text-align: center;
 }
-.card-0{
+.projecttitle{
+    font-family: "Spicy Rice", serif;
+    font-weight: 400;
+}
+.projectpoints{
+    font-family: "Concert One", serif;
+    font-weight: 400;
+}
+/* .card-0 {
     left: 75%;
     top: -10%;
 }
-.card-0 img{
-    rotate: 30deg;
-}
-.card-1{
+
+.card-1 {
     left: 30%;
     top: 30%;
 }
-.card-1 img{
-    rotate: -30deg;
-}
-.card-2{
+
+.card-2 {
     left: 10%;
     top: -10%;
 }
-.card-2 img{
-    rotate: 60deg;
-}
-.card-3{
+
+.card-3 {
     left: 60%;
     top: 80%;
 }
-.card-3 img{
-    rotate: 30deg;
-}
-.card-4{
+
+.card-4 {
     left: 75%;
     top: -10%;
-}
-.card-4 img{
-    rotate: 30deg;
-}
+} */
+
 .photo.tech-photo {
     position: absolute;
     top: 50%;
@@ -345,35 +353,49 @@ body {
     height: 100%;
     border-radius: 1rem;
 }
+
 .projects {
     will-change: transform;
-}.strip {
-  position: absolute;
-  white-space: nowrap;
-  overflow: hidden;
+}
+
+.strip {
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .top-strip {
-  top: 0;
-  transform: translateY(-50%);
+    top: 0;
+    transform: translateY(-50%);
 }
 
 .bottom-strip {
-  bottom: 0;
-  transform: translateY(50%);
+    bottom: 0;
+    transform: translateY(50%);
 }
 
 .text-strip {
-  display: inline-block;
-  animation: scroll-left 10s linear infinite;
+    display: inline-block;
+    animation: scroll-left 10s linear infinite;
 }
-.github, .linkedin, .email, .leetcode, .gfg, .codeforce {
+
+.github,
+.linkedin,
+.email,
+.leetcode,
+.gfg,
+.codeforce {
     position: relative;
     overflow: hidden;
     z-index: 1;
 }
 
-.github::before, .linkedin::before, .email::before, .leetcode::before, .gfg::before, .codeforce::before {
+.github::before,
+.linkedin::before,
+.email::before,
+.leetcode::before,
+.gfg::before,
+.codeforce::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -388,20 +410,180 @@ body {
     z-index: -1;
 }
 
-.github:hover::before, .linkedin:hover::before, .email:hover::before, .leetcode:hover::before, .gfg:hover::before, .codeforce:hover::before {
+.github:hover::before,
+.linkedin:hover::before,
+.email:hover::before,
+.leetcode:hover::before,
+.gfg:hover::before,
+.codeforce:hover::before {
     transform: translateY(0);
     border-radius: 0;
 }
 
-@keyframes scroll-left {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+.marquee {
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
 }
+
+.marquee div {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-right: 2rem;
+    font-family: "Spicy Rice", serif;
+}
+
+.noanimation {
+    display: none;
+}
+
+.arrowdown {
+    display: none;
+}
+
+.pulse {
+    margin: 100px auto;
+    display: block;
+    width: auto;
+    height: auto;
+    border-radius: 16px;
+    background: none;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    transition: box-shadow 1s ease-in-out;
+    box-shadow: 5px 5px 30px  rgba(255, 255, 255, 0.4);
+}
+
+.pulse:hover {
+    animation: hoverEffect 0.3s forwards;
+}
+.dots {
+    display: none;
+}
+.dots button {
+    cursor: pointer;
+    background-color: gray;
+    border: none;
+    transition: background-color 0.3s;
+  }
   
+  .dots button.active {
+    background-color: #fdb555;
+  }
+  
+  .dots button:hover {
+    background-color: #fdb555;
+  }
+  .techcontent2{
+    display: none;
+  }
+.animation{
+    display: none;
+}
+.sidebar {
+    background-color: #000;
+    position: fixed;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(100%);
+}
+
+.sidebar::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 200% 200% 0 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar.active::before {
+    transform: translateY(0);
+    border-radius: 0;
+}
+
+.sidebar .p-6 {
+    z-index: 10;
+}
+
+@keyframes hoverEffect {
+    0% {
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    }
+    50% {
+        box-shadow: 5px 5px 30px  rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        box-shadow: 5px 5px 40px  rgba(255, 255, 255, 0.4);
+    }
+}
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    }
+
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    70% {
+        -moz-box-shadow: 0 0 0 20px rgba(204, 169, 44, 0);
+        box-shadow: 0 0 0 20px rgba(204, 169, 44, 0);
+    }
+
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+        box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-240%);
+    }
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
 @keyframes mulShdSpin {
 
     0%,
@@ -487,29 +669,116 @@ body {
     }
 }
 @media (max-width: 1440px) {
-    /* Styles for large desktop screens */
-    .gsapanimation{
+    .gsapanimation {
         width: 118.5vw !important;
     }
-    .project-item{
+
+    .project-item {
         width: 140vw;
     }
 }
 
-@media (max-width: 1200px) {
-    /* Styles for smaller desktop screens */
+@media (max-width: 1300px) {
+    .gsapanimation {
+        width: 123.5vw !important;
+    }
+
+    .project-item {
+        width: 147vw;
+    }
 }
 
+@media (max-width: 1200px) {
+    .gsapanimation {
+        width: 126.4vw !important;
+    }
+
+    .project-item {
+        width: 160vw;
+    }
+
+    .navbar {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1150px) {
+    .gsapanimation {
+        width: 130.4vw !important;
+        height: 110vh;
+    }
+
+    .project-item {
+        width: 160vw;
+    }
+}
+@media (max-width: 1100px) {
+    .gsapanimation {
+        width: 128.7vw !important;
+        /* height: 110vh; */
+    }
+
+    .project-item {
+        width: 163vw;
+    }
+
+    .arrowdown {
+        display: flex;
+    }
+}
+
+@media (max-width: 1024px) and (max-height: 600px) {
+    .gsapanimation {
+        width: 131vw !important;
+    }
+    .projectpoints{
+        font-size: 1rem;
+    }
+    .linkscol{
+        flex-direction: row;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .gsapanimation {
+        display: none;
+    }
+
+    .noanimation {
+        display: block;
+    }
+    .dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+    .arrowdown {
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    .techcontent2{
+        display: flex;
+    }
+    .techcontent{
+        display: none;
+    }
+    .pointtext{
+        font-size: 20px;
+    }
+}
 @media (max-width: 768px) {
     .photos {
-      width: 80vw;
-      height: 80vw;
-    }
-  
-    .photo.tech-photo {
-      border-radius: 0.5rem;
+        width: 80vw;
+        height: 80vw;
     }
 }
 @media (max-width: 480px) {
-    /* Styles for small mobile screens */
+    .noanimation{
+        display: none;
+    }
+    .animation{
+        display: flex;
+    }
 }

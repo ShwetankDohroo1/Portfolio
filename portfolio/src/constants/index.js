@@ -2,9 +2,9 @@ import backend from '../assets/backend.png';
 import frontend from '../assets/frontend.png';
 import web from '../assets/web.png';
 import blender from '../assets/blender.png';
-import inves from  '../imgs/inves.png';
-import tic from  '../imgs/tic.png';
-import count from  '../imgs/count.png';
+import inves from '../imgs/inves.png';
+import tic from '../imgs/tic.png';
+import count from '../imgs/count.png';
 import ngo from '../imgs/ngo.png';
 import ReactCanvas from '../components/Canvas/react.jsx';
 import NodeCanvas from '../components/Canvas/nodejs.jsx';
@@ -12,41 +12,72 @@ import JSCanvas from '../components/Canvas/js.jsx';
 import BootCanvas from '../components/Canvas/bootstrap.jsx';
 import FramerCanvas from '../components/Canvas/framer.jsx';
 import MongoCanvas from '../components/Canvas/mongo.jsx';
+import NodeFarm from '../imgs/NodeFarm.png'
 export const techies = [
   {
     title: "React.js",
-    canvasComponent : ReactCanvas,
-    about:  [
-      "Redux : State container for JavaScript apps.",
-      "React Query : Data fetching and caching.",
-      "React Router : Library for handling navigation and routing.",
-      "Tailwind CSS : Inline CSS",
-      "Axios : For HTTP requests.",],
+    canvasComponent: ReactCanvas,
+    about: [
+      "Redux",
+      "React Query",
+      "React Router",
+      "Tailwind CSS",
+      "Axios",],
   },
   {
     title: "Java Script",
-    canvasComponent : JSCanvas,
-    about: [],
+    canvasComponent: JSCanvas,
+    about: [
+      "Closure",
+      "Async/Sync",
+      "CallBacks",
+      "Promises",
+    ],
   },
   {
     title: "Node.js",
-    canvasComponent : NodeCanvas,
-    about: [],
+    canvasComponent: NodeCanvas,
+    about: [
+      "Express",
+      "CORS",
+      "Cookie-Parser",
+      "Routing",
+    ],
+  },
+  {
+    title: "Three Fiber",
+    canvasComponent: MongoCanvas,
+    about: [
+      "Canvas",
+      "Mesh",
+    ],
   },
   {
     title: "BootStrap",
-    canvasComponent : BootCanvas,
-    about: [],
+    canvasComponent: BootCanvas,
+    about: [
+      "Bootstrap CSS",
+      "Bootstrap JS",
+      "Popper.js",
+    ],
   },
   {
     title: "Framer Motion",
-    canvasComponent : FramerCanvas,
-    about: [],
+    canvasComponent: FramerCanvas,
+    about: [
+      "Animations",
+      "Variants",
+      "Gestures",
+      "Spring Animations",
+    ],
   },
   {
     title: "MongoDB",
-    canvasComponent : MongoCanvas,
-    about: [],
+    canvasComponent: MongoCanvas,
+    about: [
+      "JSON-like BSON documents",
+      "NoSQL",
+    ],
   },
 ];
 export const navLinks = [
@@ -159,8 +190,9 @@ const projects = [
       "The platform simplifies the process of discovering, evaluating, and donating to NGOs, enhancing transparency and accessibility for users.",
       "PhilanthroHub is designed to have a global reach, enabling users to support charitable organizations across various regions and sectors.",
     ],
-    deployment:"Still working on it",
-    bg_color:"#afb09b",
+    deployment: "Still working on it",
+    color: "#83d4f7",
+    github: "https://github.com/shubham-goyal-0811/iicmuj-philantro",
   },
   {
     title: "Web-Game",
@@ -174,8 +206,9 @@ const projects = [
       "The game likely follows the standard rules of Tic-Tac-Toe, where players alternate turns placing their symbols on the board and the first player to get three in a row (horizontally, vertically, or diagonally) wins.",
       "Tech I used here are React.js, Node.js, CSS and Tailwing, GSAP for animations.",
     ],
-    deployment:"https://tic-tac-toe-usingreactjs.netlify.app/",
-    bg_color:"#E7E8D1",
+    deployment: "https://tic-tac-toe-usingreactjs.netlify.app/",
+    color: "#CBC3E3",
+    github: "https://github.com/ShwetankDohroo1/Tic-Tac-Toe",
   },
   {
     title: "Investment Calculator",
@@ -189,8 +222,9 @@ const projects = [
       "Comprehensive Output: The calculator should provide detailed information about the investment, including year-by-year breakdowns, total returns, and visual representations.",
       "Tech I used here are React.js, CSS and Tailwing, GSAP for animations.",
     ],
-    deployment:"https://investment-calculator-usingreactjs.netlify.app/",
-    bg_color:"#b8c8b4",
+    deployment: "https://investment-calculator-usingreactjs.netlify.app/",
+    color: "#b8c8b4",
+    github: "https://github.com/ShwetankDohroo1/Investment",
   },
   {
     title: "Catch-Count-Down",
@@ -204,23 +238,42 @@ const projects = [
       "Tech I used here are React.js, CSS and Tailwing, GSAP for animations.",
       "I have used React.js Hooks like UseState, UseRef for implementing the working of timer and calculations",
     ],
-    deployment:"https://catch-count-down.netlify.app/",
-    bg_color:"#9cb498",
+    deployment: "https://catch-count-down.netlify.app/",
+    color: "#FFD580",
+    github: "https://github.com/ShwetankDohroo1/CountDown",
   },
   {
-    title: "Avengers Headquater",
-    company_name: "Avengers Headquater",
-    // icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Nov 2022 - Dec 2022",
-    points: [
-      "A fun site where you can enter as a human in Avengers HeadQuaters.",
-      "You are welcomed by the Avengers and you are open to search movies, comics and history of every Avenger.",
-      "Tech I used here are HTML, CSS and Tailwing",
+    "title": "Product Catalog with Cart System",
+    "company_name": "NodeFarm",
+    "icon": NodeFarm,
+    "iconBg": "#F4A261",
+    "date": "November 2024 - Present",
+    "points": [
+      "NodeFarm is a product catalog and shopping cart web application built using Node.js, serving a catalog of farm-related products.",
+      "The app allows users to browse products, view detailed information about each product, and add products to their cart.",
+      "A dynamic cart system is implemented where products can be added or removed, and the cart is displayed with product details such as name, price, and quantity.",
+      "The app uses templates and JSON data to generate dynamic product pages and handle requests for adding items to the cart.",
+      "A basic API endpoint is available to fetch the product data in JSON format, enabling future expansion of the project."
     ],
-    deployment:"Haven't Deployed",
-    bg_color:"#f2fedc",
+    "deployment": "https://node-farm-kf4e.onrender.com/",
+    "color": "#F4A261",
+    github: "https://github.com/ShwetankDohroo1/NodeFarm",
   },
+  // {
+  //   title: "Avengers Headquater",
+  //   company_name: "Avengers Headquater",
+  //   // icon: meta,
+  //   iconBg: "#E6DEDD",
+  //   date: "Nov 2022 - Dec 2022",
+  //   points: [
+  //     "A fun site where you can enter as a human in Avengers HeadQuaters.",
+  //     "You are welcomed by the Avengers and you are open to search movies, comics and history of every Avenger.",
+  //     "Tech I used here are HTML, CSS and Tailwing",
+  //   ],
+  //   deployment: "Haven't Deployed",
+  //   color: "#f2fedc",
+  //   github: "",
+  // },
 ];
 
 const testimonials = [

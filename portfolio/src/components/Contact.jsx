@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import { SectionWrapper } from "../hoc";
 import toast from 'react-hot-toast';
-// import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
     const toastId = toast.loading('Sending email...');
@@ -34,27 +33,25 @@ const Contact = () => {
             user_message: formData.message,
         };        
     
-        try{
-            toast.success("Email Send Successfully...",{ id: toastId });
+        try {
+            toast.success("Email Send Successfully...", { id: toastId });
             console.log("Sending EmailJS Data:", emailData);
             await emailjs.send(serviceId, templateId, emailData, userId);
             setIsSubmitted(true);
-        } 
-        catch (err){
-            toast.error(`Failed to send mail...`,{ id: toastId });
+        } catch (err) {
+            toast.error(`Failed to send mail...`, { id: toastId });
             console.error("EmailJS Error:", err);
             setError("Failed to send the message. Please try again later.");
         }
-    
     };
 
     return (
         <motion.div
-            className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-10"
+            className="contactpage pulse max-w-3xl mx-auto p-6 rounded-2xl mt-10 duration-500"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}>
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+            <h2 className="text-3xl font-bold text-center text-gray-100 mb-6">
                 Get in Touch
             </h2>
             {isSubmitted ? (
@@ -66,7 +63,7 @@ const Contact = () => {
                     <h3 className="text-xl font-semibold text-green-600">
                         Thank you for reaching out!
                     </h3>
-                    <p className="text-gray-600">We will get back to you soon.</p>
+                    <p className="text-gray-100">We will get back to you soon.</p>
                 </motion.div>
             ) : (
                 <form className="space-y-4" onSubmit={handleSubmit}>
@@ -75,8 +72,7 @@ const Contact = () => {
                         whileTap={{ scale: 0.98 }}>
                         <label
                             htmlFor="name"
-                            className="text-gray-700 font-medium mb-2"
-                        >
+                            className="text-gray-400 font-medium mb-2">
                             Name
                         </label>
                         <input
@@ -94,8 +90,7 @@ const Contact = () => {
                         whileTap={{ scale: 0.98 }}>
                         <label
                             htmlFor="email"
-                            className="text-gray-700 font-medium mb-2"
-                        >
+                            className="text-gray-400 font-medium mb-2">
                             Email
                         </label>
                         <input
@@ -113,8 +108,7 @@ const Contact = () => {
                         whileTap={{ scale: 0.98 }}>
                         <label
                             htmlFor="message"
-                            className="text-gray-700 font-medium mb-2"
-                        >
+                            className="text-gray-400 font-medium mb-2">
                             Message
                         </label>
                         <textarea
