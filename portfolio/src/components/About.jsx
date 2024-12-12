@@ -8,7 +8,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0.5 }} className='w-full p-[1px] rounded-[20px] shadow-card'>
+    <motion.div variants={fadeIn("up", "spring", index * 0.1, 0.75)} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0.5 }} className='w-full p-[1px] rounded-[20px] shadow-card'>
       <div className="bg-[#F9F6EE] bg-opacity-80 rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col shadow-lg">
         <img src={icon} alt={title} className='w-18 h-18 object-contain' />
         <h3 className='text-[#3a434c] text-[20px] font-bold text-center'>
