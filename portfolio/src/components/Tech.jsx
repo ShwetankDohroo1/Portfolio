@@ -120,10 +120,8 @@ const Tech = () => {
             <div className="container1 p-4">
               <div className="cards1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {techies.map((tech, i) => (
-                  <div
-                    className={`card1 card-${i + 1} bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300`}
-                    key={i}
-                  >
+                  <div className={`card1 card-${i + 1} bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300`}
+                    key={i}>
                     <h2 className="card-title1 text-2xl font-bold mb-2">
                       {tech.title}
                     </h2>

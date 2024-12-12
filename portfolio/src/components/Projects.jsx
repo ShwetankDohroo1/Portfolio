@@ -160,7 +160,7 @@ const Projects = () => {
                 <div className="linkscol flex flex-col gap-4 text-red-300">
                   <p className="text-lg font-semibold mt-4">
                     <a href={project.deployment}>
-                      DeploymentGitHub:{" "}
+                      Deployment{" "}
                     </a>
                   </p>
                   <p className="text-lg font-semibold mt-4">
@@ -195,13 +195,13 @@ const Projects = () => {
                     </ul>
                   </div>
                   <p className="text-lg font-semibold mt-4">
-                    Deployment:{" "}
+                    Deployment{" "}
                     <a href={project.deployment} target="_blank" rel="noopener noreferrer">
                       <span className="text-blue-500">{project.deployment}</span>
                     </a>
                   </p>
                   <p className="text-lg font-semibold mt-4">
-                    GitHub:{" "}
+                    GitHub{" "}
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <span className="text-blue-500">{project.github}</span>
                     </a>
@@ -214,7 +214,14 @@ const Projects = () => {
       </div>
       <div className="animation w-full h-full flex flex-col rounded-2xl mt-10">
         {projects.map((project, index) => (
-          <div key={index} className="project-card p-6 mb-6 rounded-lg shadow-lg bg-white flex flex-col gap-4 border border-gray-200">
+          <motion.div
+            key={index}
+            className="project-card p-6 mb-6 rounded-lg shadow-lg bg-[#4b4a54] flex flex-col gap-4"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
+          >
             <div className="flex items-center gap-4">
               <div
                 className="icon w-16 h-16 rounded-full flex-shrink-0"
@@ -227,14 +234,14 @@ const Projects = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
-                <p className="text-sm text-gray-500">{project.company_name}</p>
+                <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                <p className="text-sm text-white">{project.company_name}</p>
               </div>
             </div>
-            <div className="text-gray-500 text-sm">
+            <div className="text-gray-300 text-sm">
               <span className="font-semibold">Date:</span> {project.date}
             </div>
-            <ul className="list-disc list-inside text-gray-700">
+            <ul className="list-disc list-inside text-white">
               {project.points.map((point, i) => (
                 <li key={i} className="text-sm">
                   {point}
@@ -242,16 +249,27 @@ const Projects = () => {
               ))}
             </ul>
             <div className="flex gap-4 mt-4">
-              <a href={project.deployment} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm font-semibold">
+              <a
+                href={project.deployment}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline text-sm font-semibold"
+              >
                 Deployment
               </a>
-              <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm font-semibold">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline text-sm font-semibold"
+              >
                 GitHub
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
+
     </>
   );
 };
