@@ -125,14 +125,11 @@ const Tech = () => {
                     <h2 className="card-title1 text-2xl font-bold mb-2">
                       {tech.title}
                     </h2>
-                    <p className="date text-sm text-gray-400 italic mb-4">
-                      {tech.date || "Date not provided"}
-                    </p>
                     <div className="description">
                       <ul className="text-base space-y-2">
                         {tech.about.map((point, i) => (
                           <li className="text-lg font-medium flex items-center space-x-2" key={i}>
-                            <span className="bg-purple-600 w-2 h-2 rounded-full"></span>
+                            <span className="bg-purple-600 w-2 h-2 rounded-full m-1"></span>
                             {point}
                           </li>
                         ))}

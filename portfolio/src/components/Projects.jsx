@@ -214,27 +214,13 @@ const Projects = () => {
       </div>
       <div className="animation w-full h-full flex flex-col rounded-2xl mt-10">
         {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            className="project-card p-6 mb-6 rounded-lg shadow-lg bg-[#4b4a54] flex flex-col gap-4"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
-          >
+          <motion.div key={index} className="project-card p-6 mb-6 rounded-lg shadow-lg bg-[#4b4a54] flex flex-col gap-4" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.2 }} transition={{ duration: 0.8, delay: index * 0.2 }}>
             <div className="flex items-center gap-4">
-              <div
-                className="icon w-16 h-16 rounded-full flex-shrink-0"
-                style={{ backgroundColor: project.iconBg }}
-              >
-                <img
-                  src={project.icon}
-                  alt={project.title}
-                  className="w-full h-full object-cover rounded-full"
-                />
+              <div className="icon w-16 h-16 rounded-full flex-shrink-0" style={{ backgroundColor: project.iconBg }}>
+                <img src={project.icon} alt={project.title}className="w-full h-full object-cover rounded-full"/>
               </div>
               <div className="flex flex-col">
-                <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                <h3 className="projecttitle text-3xl font-bold text-white" style={{ color: project.color }}>{project.title}</h3>
                 <p className="text-sm text-white">{project.company_name}</p>
               </div>
             </div>
@@ -243,33 +229,22 @@ const Projects = () => {
             </div>
             <ul className="list-disc list-inside text-white">
               {project.points.map((point, i) => (
-                <li key={i} className="text-sm">
+                <li key={i} className="projectpoints text-md">
                   {point}
                 </li>
               ))}
             </ul>
             <div className="flex gap-4 mt-4">
-              <a
-                href={project.deployment}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline text-sm font-semibold"
-              >
+              <a href={project.deployment} target="_blank"rel="noopener noreferrer"className="text-blue-600 hover:underline text-sm font-semibold">
                 Deployment
               </a>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline text-sm font-semibold"
-              >
+              <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm font-semibold">
                 GitHub
               </a>
             </div>
           </motion.div>
         ))}
       </div>
-
     </>
   );
 };
