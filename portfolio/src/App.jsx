@@ -15,7 +15,8 @@ function App() {
     if (isLoading) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflowX = "hidden";
+      document.body.style.overflowY = "auto";
     }
 
     // Add cursor-dot movement logic

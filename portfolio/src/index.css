@@ -594,8 +594,9 @@ body {
 .fade-in.show {
     opacity: 1;
 }
-  
-
+.icon{
+    display: none;
+}
 @keyframes spin {
     to {
         transform: rotate(1turn);
@@ -898,5 +899,8 @@ body {
 
     .navi {
         bottom: 3rem;
+    }
+    .icon{
+        display: flex;
     }
 }

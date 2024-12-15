@@ -32,7 +32,7 @@ export function Navbar() {
                         </li>
                     ))}
                 </ul>
-                <div className="flex flex-1 items-center justify-end">
+                <div className="icon flex flex-1 items-center justify-end">
                     <div className={`flex flex-col ${toggle ? "change" : ""}`} onClick={() => setToggle(!toggle)}>
                         <div className="bar1" style={{ width: "25px", height: "3px", transition: "0.4s", transform: toggle ? "translate(0, 11px) rotate(-45deg)" : "none", }}>
 
