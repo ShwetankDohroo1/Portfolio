@@ -12,30 +12,28 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (isLoading) {
+    if(isLoading){
       document.body.style.overflow = "hidden";
-    } else {
+    } 
+    else{
       document.body.style.overflowX = "hidden";
       document.body.style.overflowY = "auto";
     }
-
-    // Add cursor-dot movement logic
+    //cursor logic
     const cursorDot = document.querySelector("[data-cursor-dot]");
     const handleMouseMove = (e) => {
       const posX = e.clientX;
       const posY = e.clientY;
-      if (cursorDot) {
+      if(cursorDot){
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
       }
     };
     window.addEventListener("mousemove", handleMouseMove);
-
-    // Stop the loader after 3 seconds
+    //loader
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 3000);
-
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       clearTimeout(timer);
@@ -51,8 +49,6 @@ function App() {
             <div className="clock-loader"></div>
           </div>
         )}
-
-        {/* Add fade-in classes to main content */}
         <div className={`bg-hero-pattern bg-cover bg-no-repeat bg-center ${isLoading ? "fade-in" : "fade-in show"}`}>
           <Navbar />
           <Setup />

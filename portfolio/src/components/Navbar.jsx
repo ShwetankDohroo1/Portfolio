@@ -48,9 +48,7 @@ export function Navbar() {
             </div>
             <div className={`sidebar ${toggle ? "active" : ""} fixed top-0 right-0 h-full bg-[#363636] shadow-lg z-10 w-[240px] transform transition-transform duration-500`}>
                 <div className="p-6 flex flex-col">
-                    <button
-                        className="text-white text-5xl mb-4 self-end"
-                        onClick={() => setToggle(false)}>
+                    <button className="text-white text-5xl mb-4 self-end" onClick={() => setToggle(false)}>
                         ×
                     </button>
                     <ul className="list-none flex flex-col gap-3">

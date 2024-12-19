@@ -27,9 +27,7 @@ const About = () => {
         <h2 className={`${styles.sectionHeadText} HeadingText text-[#fdb555]`}>Overview.</h2>
       </motion.div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="Heading-desc xmt-4 text-[#FFFFF0] text-2xl font-semibold">
+      <motion.p variants={fadeIn("", "", 0.1, 1)} className="Heading-desc xmt-4 text-[#FFFFF0] text-2xl font-semibold">
         I'm a skilled software developer with experience in TypeScript and
         JavaScript, and expertise in frameworks like React, Node.js, and
         Three.js. I'm a quick learner and collaborate closely with clients to

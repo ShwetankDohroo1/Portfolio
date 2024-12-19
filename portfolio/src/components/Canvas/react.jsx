@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import CanvasLoader from '../Loader';
 
 const Reactmodel = () => {
-    const reactModel = useGLTF('./react.gltf'); // Load react.gltf model
+    const reactModel = useGLTF('./react.gltf');
 
     return (
         <mesh>

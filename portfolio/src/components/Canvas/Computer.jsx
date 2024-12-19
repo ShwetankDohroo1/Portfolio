@@ -11,8 +11,7 @@ const Computers = ({ isMobile, isTablet }) => {
             <pointLight intensity={10} />
             <directionalLight position={[5, 10, 5]} intensity={5} castShadow shadow-mapSize={1024} />
             <primitive 
-                object={computer.scene} scale={isMobile ? 0.4 : isTablet ? 0.6 : 0.8} position={isMobile ? [0, -2, -0.7] : isTablet ? [0, -2.1, -1] : [0, -2.25, -1.5]} rotation={[-0.01, -0.2, -0.3]} 
-            />
+                object={computer.scene} scale={isMobile ? 0.4 : isTablet ? 0.6 : 0.6} position={isMobile ? [0, -2, -0.7] : isTablet ? [0, -2.1, -1] : [0, -2.25, -1.5]} rotation={[-0.01, -0.2, -0.3]} />
         </mesh>
     );
 };

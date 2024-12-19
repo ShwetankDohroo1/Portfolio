@@ -9,17 +9,16 @@ import { styles } from "../styles";
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
+  //horizontal scroll
   useEffect(() => {
-    //side effect: set up animations and event listeners
     const projectsContainer = document.querySelector(".projects");//select the container for projects
     const gsapAnimationContainer = document.querySelector(".gsapanimation");//select the container for animations
 
-    if (!projectsContainer || !gsapAnimationContainer) return;//exit early if elements are not found
+    if(!projectsContainer || !gsapAnimationContainer)
+      return;//exit early if elements are not found
 
     const createAnimation = () => {//function to create scroll-triggered animations
-
       const horizontalScrollWidth = projectsContainer.scrollWidth - window.innerWidth;//calculate total scrollable width
-
       const horizontalTween = gsap.to(projectsContainer, {
         x: -horizontalScrollWidth,//move container horizontally
         ease: "power1.inOut",//easing for smooth animation
@@ -41,7 +40,7 @@ const Projects = () => {
         invalidateOnRefresh: true,
         onUpdate: (self) => {//callback on scroll update
           const progress = Math.round(self.progress * 100);//get scroll progress as a percentage
-          if (progress !== lastProgress) {
+          if(progress !== lastProgress){
             lastProgress = progress;//update the progress tracker
             const currentColor = startColor.map((start, i) =>
               Math.round(gsap.utils.interpolate(start, endColor[i], progress / 100))
@@ -78,7 +77,6 @@ const Projects = () => {
         },
       });
     };
-
     createAnimation();
 
     const handleResize = () => {//function to handle screen resize
@@ -86,9 +84,7 @@ const Projects = () => {
       createAnimation();//recreate animations for new dimensions
       ScrollTrigger.refresh();//refresh ScrollTrigger
     };
-
     window.addEventListener("resize", handleResize);//add event listener for window resize
-
     return () => {//cleanup function when component unmounts or dependencies change
       window.removeEventListener("resize", handleResize);//remove resize listener
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());//clean up ScrollTrigger instances
@@ -96,8 +92,9 @@ const Projects = () => {
   }, []);//empty dependency array ensures this effect runs once on mount
 
   const containerRef = useRef();//create a ref for DOM element access
-
-  useEffect(() => {//det up card animations
+  
+  //cards animation
+  useEffect(() => {
     const cardsWrappers = gsap.utils.toArray(".card-wrapper");
     const cards = gsap.utils.toArray(".card");
 
@@ -105,7 +102,7 @@ const Projects = () => {
       const card = cards[i];//get the corresponding card
       let scale = 1,
         rotation = 0; //initialize scale and rotation
-      if (i !== cards.length - 1) {
+      if(i !== cards.length - 1){
         scale = 0.9 + 0.025 * i; //scale cards based on index
         rotation = -10;//rotate cards slightly
       }
@@ -140,6 +137,7 @@ const Projects = () => {
           </p>
         </div>
       </div>
+      {/* scroll */}
       <div className="gsapanimation rounded-2xl mt-10">
         <div className="projects flex h-full">
           {projects.map((project, index) => (
@@ -175,6 +173,7 @@ const Projects = () => {
           <div className="arrowdown h-full flex items-center"><span className="text-9xl">&#8628;</span></div>
         </div>
       </div>
+      {/* card animation */}
       <div className="noanimation w-full h-full rounded-2xl mt-10">
         <div ref={containerRef} className="flex flex-col h-full wrapper light">
           <div className="cards">
@@ -212,6 +211,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
+      {/* mobile */}
       <div className="animation w-full h-full flex flex-col rounded-2xl mt-10">
         {projects.map((project, index) => (
           <motion.div key={index} className="project-card p-6 mb-6 rounded-lg shadow-lg bg-[#4b4a54] flex flex-col gap-4" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.2 }} transition={{ duration: 0.8, delay: index * 0.2 }}>
