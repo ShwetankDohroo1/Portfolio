@@ -53,9 +53,8 @@ export function Navbar() {
                     </button>
                     <ul className="list-none flex flex-col gap-3">
                         {navLinks.map((link) => (
-                            <li key={link.id} className={`${active === link.title ? "text-blue-400 font-bold" : "text-white"} text-[16px] cursor-pointer hover:bg-red-500 px-3 py-2 rounded-lg duration-300`}
-                                onClick={() => { setActive(link.title);setToggle(false);}}>
-                                <a href={`#${link.id}`}>{link.title}</a>
+                            <li key={link.id} className={`${active === link.title ? "text-blue-400 font-bold" : "text-white"} text-[16px] cursor-pointer hover:bg-red-500 px-3 py-2 rounded-lg duration-300`}onClick={() => { setActive(link.title);setToggle(false);}}>
+                                <a className="w-full" href={`#${link.id}`}>{link.title}</a>
                             </li>
                         ))}
                     </ul>
