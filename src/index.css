@@ -962,6 +962,9 @@ body {
     .pointtext {
         font-size: 20px;
     }
+    .navi{
+        bottom: 3rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -990,10 +993,6 @@ body {
 
     .logo {
         width: 2rem;
-    }
-
-    .navi {
-        bottom: 3rem;
     }
     .icon{
         display: flex;
