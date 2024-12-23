@@ -42,8 +42,8 @@ const About = () => {
       </div>
       <div className="marquee w-full mt-40" style={{ height: '7vh' }}>
         <div className="flex justify-center items-center w-full h-full text-5xl">
-          <span> ~ React.js ~ Node.js ~ Express ~ MongoDB ~ Gsap ~ Mongoose ~</span>
-          <span> ~ FrameMotion ~ TailwindCSS ~ Mongoose ~ JavaScript ~ Redis ~ MySQL ~</span>
+          <span> ~ React.js ~ Node.js ~ Express ~ MongoDB ~ Gsap ~ Mongoose</span>
+          <span> ~ FramerMotion ~ TailwindCSS ~ Mongoose ~ JavaScript ~ Redis ~ MySQL ~</span>
         </div>
       </div>
     </>
